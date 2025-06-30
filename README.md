@@ -4,10 +4,10 @@ Simple python script which concatenates audio files from Anki flashcards to aid 
 
 # Usage
 
-In Anki, export selected notes as .txt into input folder located in the same directory as the script.
-Edit the script to specify the path to your Anki collection's media folder.
-Open a terminal and navigate to the directory containing the script, then run "python reinforce.py" (or possibly "python3 reinforce.py")
-Upon completion, the output will be located at output/output.mp3.
+1. In Anki, export selected notes as .txt into input folder located in the same directory as the script.
+2. Edit the script to specify the path to your Anki collection's media folder.
+3. Open a terminal and navigate to the directory containing the script, then run "python reinforce.py" (or possibly "python3 reinforce.py")
+4. Upon completion, the output will be located at output/output.mp3.
 
 # Dependencies
 
