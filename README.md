@@ -16,8 +16,8 @@ pydub
 # To do
 
 - [x]   Basic functionality
-- []    Account for other audio formats
-- []    Example input and output files
-- []    Config file to contain user variables
-- []    Settings and customizability
-- []    Anki plugin
+- [ ]    Account for other audio formats
+- [ ]    Example input and output files
+- [ ]    Config file to contain user variables
+- [ ]    Settings and customizability
+- [ ]    Anki plugin
