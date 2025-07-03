@@ -4,7 +4,8 @@ from pydub import AudioSegment
 
 #User variables
 input_path = "input/Selected Notes.txt"
-media_path = "/home/wold/Sync/Anki/Anki2/User 1/collection.media/"
+output_path = "output/Selected Notes.mp3"
+media_path = "/home/wold/Anki/Anki2/User 1/collection.media/"
 silence_interval_ms = 3000
 
 with open(input_path, 'r', encoding='utf-8') as input:
@@ -18,4 +19,5 @@ with open(input_path, 'r', encoding='utf-8') as input:
         print(file_path)
         audio = AudioSegment.from_file(file_path, format="mp3") + silence
         concatenated += audio
-    concatenated.export("output/output.mp3", format="mp3")
+    concatenated.export(output_path, format="mp3")
+    print(f"File written to {output_path}") 
