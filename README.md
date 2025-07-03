@@ -17,7 +17,6 @@ pydub
 
 - [x] Basic functionality
 - [ ] Account for other audio formats
-~~- [ ] Config file to contain user variables~~
 - [x] Accept command line arguments
 - [ ] Error handling
 - [ ] Settings and customizability
