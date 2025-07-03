@@ -9,7 +9,14 @@ parser.add_argument('-b', '--base', default=os.environ.get("HOME")+'/.local/shar
 parser.add_argument('-s', '--silence', default=3000, type=int, help='Length of silence to insert between audio clips in ms; default=3000')
 args = parser.parse_args()
 
-output_path = "output/Selected Notes.mp3"
+input_dir = os.getcwd() + "/input/"
+if not os.path.exists(input_dir):
+    os.makedirs(input_dir)
+output_dir = os.getcwd() + "/output/"
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+output_name = "Selected Notes.mp3"
+output_path = output_dir + output_name
 
 with open(args.filename, 'r', encoding='utf-8') as input:
     audio_files = []
@@ -23,4 +30,4 @@ with open(args.filename, 'r', encoding='utf-8') as input:
         concatenated += audio
         print(file_path)
     concatenated.export(output_path, format="mp3")
-    print(f"File written to {os.getcwd()}/{output_path}") 
+    print(f"File written to {output_path}") 
