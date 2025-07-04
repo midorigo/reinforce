@@ -4,9 +4,19 @@ import re
 from pydub import AudioSegment
 
 parser = argparse.ArgumentParser(prog='reinforce', description='Concatenate audio files from Anki cards')
-parser.add_argument('filename', default='input/Selected Notes.txt', help='File to operate on, e.g. \"input/Selected Notes.txt\"')
-parser.add_argument('-b', '--base', default=os.environ.get("HOME")+'/.local/share/Anki2/User 1/collection.media', help='Path of collection.media directory; default=\"~/.local/share/Anki2/User 1/collection.media/\"')
-parser.add_argument('-s', '--silence', default=3000, type=int, help='Length of silence to insert between audio clips in ms; default=3000')
+parser.add_argument('-f',
+                    '--filename',
+                    default='input/Selected Notes.txt',
+                    help='File to operate on, e.g. \"input/Selected Notes.txt\"')
+parser.add_argument('-b',
+                    '--base',
+                    default=os.environ.get("HOME")+'/.local/share/Anki2/User 1/collection.media',
+                    help='Path of collection.media directory; default=\"~/.local/share/Anki2/User 1/collection.media/\"')
+parser.add_argument('-s',
+                    '--silence',
+                    default=3000,
+                    type=int,
+                    help='Length in miliseconds of silence to insert between audio clips; default=3000')
 args = parser.parse_args()
 
 input_dir = os.getcwd() + "/input/"
