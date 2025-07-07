@@ -25,7 +25,7 @@ if not os.path.exists(input_dir):
 output_dir = os.getcwd() + "/output/"
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
-output_name = "Selected Notes.mp3"
+output_name = "Reinforce.mp3"
 output_path = output_dir + output_name
 
 with open(args.filename, 'r', encoding='utf-8') as input:
@@ -35,7 +35,7 @@ with open(args.filename, 'r', encoding='utf-8') as input:
     concatenated = AudioSegment.empty()
     silence = AudioSegment.silent(duration=args.silence)
     for i, filename in enumerate(audio_files):
-        print(f"({i + 1}/{len(audio_files)})\t{filename}")
+        print(f"({i + 1}/{len(audio_files)}) {filename}")
         file_path = args.base + filename
         audio = AudioSegment.from_file(file_path, format="mp3") + silence
         concatenated += audio
