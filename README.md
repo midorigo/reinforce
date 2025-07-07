@@ -2,11 +2,9 @@
 
 Simple python script which concatenates audio files from Anki flashcards to aid with passive reinforcement.
 
-# Dependencies
+Depends on pydub
 
-pydub
-
-# To do
+# To Do
 
 - [x] Basic functionality
 - [ ] Account for other audio formats
