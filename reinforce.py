@@ -35,9 +35,9 @@ with open(args.filename, 'r', encoding='utf-8') as input:
     concatenated = AudioSegment.empty()
     silence = AudioSegment.silent(duration=args.silence)
     for filename in audio_files:
+        print(filename)
         file_path = args.base + filename
         audio = AudioSegment.from_file(file_path, format="mp3") + silence
         concatenated += audio
-        print(file_path)
     concatenated.export(output_path, format="mp3")
     print(f"File written to {output_path}") 
