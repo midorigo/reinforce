@@ -32,6 +32,7 @@ with open(args.filename, 'r', encoding='utf-8') as input:
     audio_files = []
     for line in input:
         audio_files.extend(re.findall(r"\[sound:(.*?)\]", line))
+    print(f"{len(audio_files)} Sound files found")
     concatenated = AudioSegment.empty()
     silence = AudioSegment.silent(duration=args.silence)
     for filename in audio_files:
