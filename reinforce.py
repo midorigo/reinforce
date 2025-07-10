@@ -37,7 +37,11 @@ with open(args.filename, 'r', encoding='utf-8') as input:
     for i, filename in enumerate(audio_files):
         print(f"({i + 1}/{len(audio_files)}) {filename}")
         file_path = args.base + filename
-        audio = AudioSegment.from_file(file_path, format="mp3") + silence
-        concatenated += audio
+        try:
+            audio = AudioSegment.from_file(file_path, format="mp3") + silence
+            concatenated += audio
+        except:
+            print(f"Failed to convert {filename}")
+            continue
     concatenated.export(output_path, format="mp3")
     print(f"File written to {output_path}") 
